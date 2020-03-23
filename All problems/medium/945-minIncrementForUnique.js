@@ -23,13 +23,45 @@
 链接：https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-
+/**
+每次移动可以把一个数字增加1，现在要把数组变成没有重复数字的数组，问需要的最少移动是多少。
+ */
 
 
 /**
+ * 数组排序
+ * 遍历，如果当前的数小于或等于前一个数，说明要加计算当前数和前一个数的差值再加 1，就实现了当前数比前一个数多 1
  * @param {number[]} A
  * @return {number}
  */
 var minIncrementForUnique = function(A) {
+    let move = 0;
+    A = A.sort((a, b) => a - b);
+    for (let i = 1; i < A.length; i++) {
+        if (A[i] <= A[i+1]) {
+            let n = A[i-1]+1-A[i];
+            A[i] += n;
+            move += n;
+        }
+    }
+    return move;
+};
 
+
+/**
+ * Hash
+ * @param {number[]} A
+ * @return {number}
+ */
+var minIncrementForUnique = function(A) {
+    let count = 0
+    let hash = []
+    for(let num of A) {
+        while(hash[num]) {
+            count++
+            num++
+        }
+        hash[num] = true
+    }
+    return count
 };
