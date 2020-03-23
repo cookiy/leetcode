@@ -35,13 +35,13 @@
  * @return {number}
  */
 var minIncrementForUnique = function(A) {
-    let move = 0;
+    if(A.length==0)return 0
     A = A.sort((a, b) => a - b);
-    for (let i = 1; i < A.length; i++) {
-        if (A[i] <= A[i+1]) {
-            let n = A[i-1]+1-A[i];
-            A[i] += n;
-            move += n;
+    let move = 0;
+    for (let i = 0; i < A.length; i++) {
+        if (A[i] >= A[i+1]) {
+            move += (A[i] -A[i+1] + 1)
+            A[i+1] = A[i] + 1
         }
     }
     return move;
