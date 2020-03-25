@@ -29,6 +29,11 @@
 /**
  * core：dp[i] = Math.max(dp[i-1],dp[i-2]+nums[i])
  * 空间O(n)
+ * 输入： [1,2,3,1]
+ * step 0 [0 0 0 0 0]
+ * step 1 [1 2 0 0 0]
+ * step 2 [1 2 4 0 0]
+ * step 3 [1 2 4 0 0]
  * @param {number[]} nums
  * @return {number}
  */
