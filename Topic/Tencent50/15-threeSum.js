@@ -72,12 +72,6 @@ var threeSum = function(nums) {
 时间复杂度：O(n^2)O(n 
 2
  )，nn 为数组长度
-
-作者：guanpengchn
-链接：https://leetcode-cn.com/problems/3sum/solution/hua-jie-suan-fa-15-san-shu-zhi-he-by-guanpengchn/
-来源：力扣（LeetCode）
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 */
-
 /**
  * @param {number[]} nums
  * @return {number[][]}

@@ -43,7 +43,7 @@
 * @param {number} num1
 * @param {number} num2
 */
-var gdc = function (num1, num2) {
+var gcd = function (num1, num2) {
   if ((num1 - num2) < 0) {
     var k = num1
     num1 = num2
@@ -69,7 +69,7 @@ var canMeasureWater = function (x, y, z) {
   if (z > x + y) {
     return false
   }
-  if (z % gdc(x, y) === 0) {
+  if (z % gcd(x, y) === 0) {
     return true
   } else {
     return false

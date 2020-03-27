@@ -25,11 +25,6 @@
 遍历后面的字符串，依次将其与 ans 进行比较，两两找出公共前缀，最终结果即为最长公共前缀
 如果查找过程中出现了 ans 为空的情况，则公共前缀不存在直接返回
 时间复杂度：O(s)O(s)，s 为所有字符串的长度之和
-
-作者：guanpengchn
-链接：https://leetcode-cn.com/problems/longest-common-prefix/solution/hua-jie-suan-fa-14-zui-chang-gong-gong-qian-zhui-b/
-来源：力扣（LeetCode）
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 */
 /**
  * @param {string[]} strs
  * @return {string}
