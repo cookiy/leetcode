@@ -82,7 +82,6 @@ var maxDistance = function(grid) {
           for (let i = 0; i < 4; i++) {
             let r = curr[0] + ways[i][0],
                 c = curr[1] + ways[i][1];
-            
             // 越界 -> 跳过此方向
             if (
               r < 0 || r >= rowLimit || c < 0 || c >= colLimit ||

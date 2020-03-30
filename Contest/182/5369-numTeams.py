@@ -65,7 +65,6 @@ dp[i]记录的是第i个数之前比其值小的数的个数；
 """
 class Solution:
     def numTeams(self, rating: List[int]) -> int:
-        
         def func(nums):
             dp = [0] * len_
             res = 0
