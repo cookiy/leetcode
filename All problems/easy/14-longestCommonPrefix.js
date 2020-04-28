@@ -45,12 +45,3 @@ var longestCommonPrefix = function(strs) {
     }
     return ans;
 };
-
-var longestCommonPrefix = function (strs) {
-    var re = '';
-    if (!str.length) return re;
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        
-    }
-}
