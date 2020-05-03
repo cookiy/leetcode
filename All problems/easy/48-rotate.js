@@ -46,6 +46,6 @@
  * @param {number[][]} matrix
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
-var rotate = function(matrix) {
-    
+var rotate = function(nums, k) {
+  nums.splice(0,0,...nums.splice(nums.length-k))
 };
