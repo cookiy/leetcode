@@ -1,5 +1,7 @@
 /**
-给定一个非负整数数组，你最初位于数组的第一个位置。
+ 55. 跳跃游戏
+
+ 给定一个非负整数数组，你最初位于数组的第一个位置。
 
 数组中的每个元素代表你在该位置可以跳跃的最大长度。
 
@@ -21,20 +23,19 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-
 /**
  * @param {number[]} nums
  * @return {boolean}
  */
-var canJump = function(nums) {
-    let rightMost = 0; 
-    for(let i = 0; i < nums.length; i++){
-        console.log(rightMost, i, nums[i])
-        if(i <= rightMost){
-            rightMost = Math.max(rightMost, i+nums[i])
-        } else {
-            return false;
-        }
+var canJump = function (nums) {
+  let rightMost = 0
+  for (let i = 0; i < nums.length; i++) {
+    console.log(rightMost, i, nums[i])
+    if (i <= rightMost) {
+      rightMost = Math.max(rightMost, i + nums[i])
+    } else {
+      return false
     }
-    return true;
-   };
+  }
+  return true
+}
