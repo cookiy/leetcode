@@ -17,6 +17,11 @@
 假设你总是可以到达数组的最后一个位置。
  */
 /**
+贪心算法
+每次更新上一步所能跳的最远距离，遍历时，当且仅当上一步(可能隔好几步，这里是泛指)的最远距离 == 当前位置时，说明当前节点是你跳跳过程中每个阶段跳对应的可以跳的最远的距离，步数+1即可
+
+ */
+/**
  * @param {number[]} nums
  * @return {number}
  */
@@ -36,4 +41,33 @@ var jump = function(nums) {
         }
     }
     return steps;
+};
+
+
+/**
+递归回溯
+这一题不过是求众多可能组合中，所用步数最小的解
+直接维护一个最小变量即可
+遍历中，增加一个step步数，每次++
+ */
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var jump = function(nums) {
+    var minStep = Number.MAX_SAFE_INTEGER;
+    function canJumpFromWhere(position,nums,step){
+        // 跳到终点了
+        if(position == nums.length - 1){
+            minStep = Math.min(minStep,step);
+        }
+        // 当前位置可跳的最远距离索引位置，取min是因为最远距离不能超过nums的长度对应的索引值
+        var furthestPosition = Math.min(position+nums[position],nums.length - 1);
+        for(var nextPosition = position+1;nextPosition <= furthestPosition;nextPosition++){
+            canJumpFromWhere(nextPosition,nums,step+1)         
+        }
+    }
+    canJumpFromWhere(0,nums,0);
+    return minStep;
 };

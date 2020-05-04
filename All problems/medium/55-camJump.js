@@ -39,3 +39,22 @@ var canJump = function (nums) {
   }
   return true
 }
+
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var canJump = function(nums) {
+    var canJumpMax = 0;
+    var len = nums.length;
+    for(var i = 0;i<len;i++){
+        if(i > canJumpMax){
+         return false;
+        }
+        canJumpMax = Math.max(canJumpMax,i+nums[i]);
+        if(canJumpMax >= len-1){
+            return true;
+        }
+    }
+};
