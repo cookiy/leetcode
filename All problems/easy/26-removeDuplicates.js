@@ -40,6 +40,7 @@ for (int i = 0; i < len; i++) {
 /**
  * @param {number[]} nums
  * @return {number}
+ * 实际上修改数组的前几位
  */
 var removeDuplicates = function(nums) {
     var len = 1;
@@ -50,3 +51,4 @@ var removeDuplicates = function(nums) {
     }
     return len
 };
+
